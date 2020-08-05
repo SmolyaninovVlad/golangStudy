@@ -9,28 +9,32 @@ InitCase4 ...
 Напишите программу, которая запрашивает у пользователя три числа и выводит количество чисел, которые больше, либо равны 5.
 */
 func InitCase4() {
-	var values []int
+	var (
+		value1 int
+		value2 int
+		value3 int
+		count  int
+	)
 
-	fmt.Println("Введите три числа и программа сообщит вам есть ли среди них число большее чем 5")
+	fmt.Println("Введите три числа и программа сообщит вам сколько чисел большее чем 5")
 
-	bigValue := 0
+	fmt.Println("введите первое число")
+	fmt.Scan(&value1)
+	fmt.Println("введите второе число")
+	fmt.Scan(&value2)
+	fmt.Println("введите третье число")
+	fmt.Scan(&value3)
 
-	for i := 0; i < 3; i++ {
-		fmt.Println("введите число")
-		fmt.Scan(&value)
-		values = append(values, value)
+	if value1 > 5 {
+		count++
 	}
 
-	for _, value := range values {
-		if value > 5 {
-			bigValue++
-		}
+	if value2 > 5 {
+		count++
+	}
+	if value3 > 5 {
+		count++
 	}
 
-	if bigValue > 0 {
-		fmt.Println("Чисел значения которых больше 5:", bigValue)
-	} else {
-		fmt.Println("Нет чисел значения которых больше 5")
-	}
-
+	fmt.Println("Чисел больше 5:", count)
 }

@@ -4,35 +4,30 @@ import (
 	"fmt"
 )
 
-var value int
-
 /*
 InitCase2 ...
 Напишите программу, которая запрашивает у пользователя три числа и сообщает, есть ли среди них число, большее, чем 5.
 */
 func InitCase2() {
-	var values []int
+	var (
+		value1 int
+		value2 int
+		value3 int
+	)
 
 	fmt.Println("Введите три числа и программа сообщит вам есть ли среди них число большее чем 5")
 
-	bigValue := 0
+	fmt.Println("введите первое число")
+	fmt.Scan(&value1)
+	fmt.Println("введите второе число")
+	fmt.Scan(&value2)
+	fmt.Println("введите третье число")
+	fmt.Scan(&value3)
 
-	for i := 0; i < 3; i++ {
-		fmt.Println("введите число")
-		fmt.Scan(&value)
-		values = append(values, value)
-	}
-
-	for _, value := range values {
-		if value > 5 {
-			bigValue++
-		}
-	}
-
-	if bigValue > 0 {
+	if value1 > 5 || value2 > 5 || value3 > 5 {
 		fmt.Println("Есть число больше 5")
 	} else {
-		fmt.Println("Нет чисел значения которых больше 5")
+		fmt.Println("Нет чисел больше  5")
 	}
 
 }
